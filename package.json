@@ -1,0 +1,10 @@
+{
+  "name": "bluelink-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.10.0",
+    "@influxdata/influxdb-client-apis": "^1.10.0",
+    "bluelinky": "^6.0.0"
+  }
+}

@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: bluelink-scraper-job
+  labels:
+    app: bluelink-scraper
+spec:
+  schedule: "10 2 * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+            - name: github-registry-token
+          containers:
+            - name: bluelink-scraper
+              image: ghcr.io/mkuger/bluelink-scraper
+              envFrom:
+                - secretRef:
+                    name: bluelink-scraper-secret
+          restartPolicy: OnFailure
