@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+console.log("Starting...")
+
 const { InfluxDB, Point, HttpError } = require('@influxdata/influxdb-client')
 const { url, token, org, bucket, bluelinkUser, bluelinkPW, bluelinkRegion, bluelinkPIN } = require('./env')
 const { hostname } = require('os')
@@ -80,4 +82,5 @@ client.on('ready', async () => {
 
 client.on('error', async (err) => {
     // something went wrong with login
+    console.error("Login failed", err)
 });
