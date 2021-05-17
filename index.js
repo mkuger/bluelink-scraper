@@ -9,10 +9,10 @@ const { hostname } = require('os')
 const BlueLinky = require('bluelinky');
 
 const client = new BlueLinky({
-    username: bluelinkUser,
-    password: bluelinkPW,
-    region: bluelinkRegion,
-    pin: bluelinkPIN
+    username: bluelinkUser.trim(),
+    password: bluelinkPW.trim(),
+    region: bluelinkRegion.trim(),
+    pin: bluelinkPIN.trim()
 });
 
 client.on('ready', async () => {
