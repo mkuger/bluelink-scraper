@@ -12,6 +12,7 @@ const client = new BlueLinky({
     username: bluelinkUser.trim(),
     password: bluelinkPW.trim(),
     region: bluelinkRegion.trim(),
+    brand: 'hyundai',
     pin: bluelinkPIN.trim()
 });
 
